@@ -1,8 +1,17 @@
 <template>
   <v-card class="mx-auto mt-5" max-width="500">
-    <v-list v-for="todo in todos" :key="todo.id" width="300" class="d-flex justify-space-between align-center bg-purple-lighten-5">
+    <v-list
+      v-for="todo in todos"
+      :key="todo.id"
+      width="300"
+      class="d-flex justify-space-between align-center bg-purple-lighten-5"
+    >
       <v-list-item>{{ todo.description }}</v-list-item>
-      <v-btn @click="deleteTodo(todo.id)" class="delete-button bg-blue-darken-4 mr-2">delete</v-btn>
+      <v-btn
+        @click="deleteTodo(todo.id)"
+        class="delete-button bg-blue-darken-4 mr-2"
+        >delete</v-btn
+      >
     </v-list>
   </v-card>
 </template>
@@ -22,5 +31,4 @@
     emit('delete-todo', id)
   }
 </script>
-<style>
-</style>
+<style></style>
