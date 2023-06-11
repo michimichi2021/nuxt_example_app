@@ -1,8 +1,10 @@
 <template>
-  <li v-for="todo in todos" :key="todo.id" class="todo-list">
-    <span>{{ todo.description }}</span>
-    <button @click="deleteTodo(todo.id)" class="delete-button">delete</button>
-  </li>
+  <v-card class="mx-auto mt-5" max-width="500">
+    <v-list v-for="todo in todos" :key="todo.id" width="300" class="d-flex justify-space-between align-center bg-purple-lighten-5">
+      <v-list-item>{{ todo.description }}</v-list-item>
+      <v-btn @click="deleteTodo(todo.id)" class="delete-button bg-blue-darken-4 mr-2">delete</v-btn>
+    </v-list>
+  </v-card>
 </template>
 <script setup lang="ts">
   import { defineProps } from 'vue'
@@ -21,15 +23,4 @@
   }
 </script>
 <style>
-  .todo-list {
-    list-style: none;
-    margin-bottom: 12px;
-    border-radius: 4px;
-    font-size: 12px;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(204, 219, 233);
-    padding: 8px 20px;
-    width: 300px;
-  }
 </style>

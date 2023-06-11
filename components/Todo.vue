@@ -14,50 +14,11 @@
   }
 </script>
 <template>
-  <div class="container">
-    <h1>Todo</h1>
-    <div>
-      <TodoPostForm @postTodo="postTodo" />
-    </div>
-    <div class="tweet-container">
-      <p v-if="todos.length <= 0">No todos have been added</p>
-      <ul>
-        <TodoList :todos="todos" @delete-todo="deleteTodo" />
-      </ul>
-    </div>
+  <div class="flex flex-md-column mx-auto mt-5">
+    <TodoPostForm @postTodo="postTodo" />
+    <v-list v-if="todos.length <= 0">No todos have been added</v-list>
+    <ul>
+      <TodoList :todos="todos" @delete-todo="deleteTodo" />
+    </ul>
   </div>
 </template>
-
-<style>
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tweet-list {
-    list-style: none;
-    margin-bottom: 12px;
-    border-radius: 4px;
-    font-size: 12px;
-    display: flex;
-    justify-content: space-between;
-    background-color: aliceblue;
-    padding: 8px 20px;
-    width: 300px;
-  }
-
-  .payment {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-    width: 400px;
-    background-color: aliceblue;
-  }
-
-  label {
-    font-size: 20px;
-    font-weight: bold;
-  }
-</style>

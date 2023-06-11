@@ -9,9 +9,7 @@
   }
 </script>
 <template>
-  <div class="form-container">
-    <input v-model="inputtingDescription" />
-    <button class="save-button" @click="postTodo()">post</button>
-  </div>
+  <v-text-field v-model="inputtingDescription" />
+  <v-btn class="save-button bg-pink-lighten-1" @click="postTodo()">post</v-btn>
 </template>
 <style></style>
